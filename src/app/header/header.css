@@ -16,6 +16,7 @@ img {
 }
 .logo {
   background: none;
+  justify-content: center;
 }
 .logo:hover {
   background: none;
@@ -30,19 +31,22 @@ ul {
 li {
   background-color: rgb(95, 114, 121);
   border-radius: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 a {
   width: 100%;
   display: flex;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  align-items: center;
   color: rgb(251, 246, 239);
   gap: 0.75rem;
   font-weight: 500;
+  justify-content: flex-start;
+  align-items: center;
 }
 a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
+  box-shadow: #cdc6c6;
+  transform: 1px 1px 1px;
 }
