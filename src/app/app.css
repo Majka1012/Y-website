@@ -1,0 +1,21 @@
+.page-split {
+  display: grid;
+  grid-template-columns: 20% 2px 1fr;
+  height: 100vh;
+}
+header {
+  grid-column: 1;
+}
+hr {
+  grid-column: 2;
+
+  margin: 0;
+  border: none;
+  background-color: #636a79;
+}
+
+main {
+  grid-column: 3;
+  overflow: auto;
+  padding: 1rem;
+}

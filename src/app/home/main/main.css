@@ -1,0 +1,18 @@
+.split {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1rem;
+  align-items: center;
+}
+.form {
+  flex: 1;
+  background-color: rgb(136, 188, 188);
+  border-radius: 1rem;
+}
+.news {
+  flex: 2;
+  background-color: rgb(100, 162, 141);
+  max-width: 200px;
+  border-radius: 1rem;
+}
