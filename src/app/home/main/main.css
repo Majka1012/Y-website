@@ -10,8 +10,6 @@
 }
 .news {
   grid-column: 3;
-  padding-right: 0px;
-
   background-color: rgb(80, 85, 164);
   border-radius: 1rem;
 }
@@ -21,4 +19,15 @@ hr {
   margin: 0;
   border: none;
   background-color: #636a79;
+}
+
+@media screen and (max-width: 1000px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .news,
+  .split hr {
+    display: none;
+  }
 }
