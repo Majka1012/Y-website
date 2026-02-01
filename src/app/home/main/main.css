@@ -1,18 +1,24 @@
 .split {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
   gap: 1rem;
-  align-items: center;
+  grid-template-columns: 5fr 2px 1fr;
 }
 .form {
-  flex: 1;
+  grid-column: 1;
   background-color: rgb(136, 188, 188);
   border-radius: 1rem;
 }
 .news {
-  flex: 2;
-  background-color: rgb(100, 162, 141);
-  max-width: 200px;
+  grid-column: 3;
+
+  background-color: rgb(80, 85, 164);
+  max-width: 20vh;
   border-radius: 1rem;
+}
+hr {
+  grid-column: 2;
+
+  margin: 0;
+  border: none;
+  background-color: #636a79;
 }
