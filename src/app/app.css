@@ -18,4 +18,5 @@ main {
   grid-column: 3;
   overflow: auto;
   padding: 1rem;
+  padding-right: 0px;
 }
