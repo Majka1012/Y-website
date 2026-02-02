@@ -8,7 +8,6 @@ header {
 }
 hr {
   grid-column: 2;
-
   margin: 0;
   border: none;
   background-color: #636a79;
@@ -17,6 +16,5 @@ hr {
 main {
   grid-column: 3;
   overflow: auto;
-  padding: 1rem;
-  padding-right: 0px;
+  padding: 0rem 1rem 0rem 1rem;
 }

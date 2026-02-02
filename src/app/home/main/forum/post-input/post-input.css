@@ -1,0 +1,20 @@
+img {
+  height: 30px;
+  width: 45px;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.lowerPost ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+}
