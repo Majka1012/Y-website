@@ -20,7 +20,7 @@ img {
   gap: 1rem;
   margin: 0px;
   padding: 0px;
-  padding-left: 3rem;
+  padding-left: 2rem;
 }
 li {
   list-style: none;
@@ -28,14 +28,15 @@ li {
 a {
   text-decoration: none;
   color: rgb(178, 225, 240);
+  font-size: 1.5rem;
 }
 #postButton {
   margin-left: auto;
   background-color: #415775;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
   margin-left: auto;
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 #postButton a {
   color: rgb(178, 225, 240);
@@ -46,9 +47,14 @@ a {
   align-items: center;
   justify-content: flex-start;
 }
-.upperPost input {
+.upperPost textarea {
   width: 60%;
-  height: 3rem;
+  min-height: 2rem;
+  max-height: 6rem;
+  height: 100%;
   background-color: transparent;
   border: none;
+  color: rgb(178, 225, 240);
+  resize: none;
+  box-sizing: border-box;
 }
