@@ -2,6 +2,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: 5fr 2px 2fr;
+  height: 100%;
 }
 .form {
   grid-column: 1;

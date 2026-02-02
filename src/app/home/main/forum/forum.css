@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1rem;
 }
 .input {
   border-radius: 1rem;
-
-  background-color: antiquewhite;
 }
 .posts {
   border-radius: 1rem;
-  background-color: rgb(204, 204, 64);
+}
+.vl {
+  margin: 0px;
+  padding: 0px;
+  height: 2px;
+  background-color: #636a79;
 }
