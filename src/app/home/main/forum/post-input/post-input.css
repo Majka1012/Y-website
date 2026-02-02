@@ -1,20 +1,53 @@
 img {
-  height: 30px;
-  width: 45px;
+  height: 2rem;
+  width: 3rem;
 }
 .post {
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
 }
-
+.lowerPost {
+  display: flex;
+  align-items: flex-end;
+}
 .lowerPost ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
+  width: 100%;
   gap: 1rem;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 3rem;
 }
 li {
-  text-decoration: none;
   list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#postButton {
+  margin-left: auto;
+  background-color: #415775;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  margin-right: 3rem;
+}
+#postButton a {
+  color: rgb(178, 225, 240);
+}
+
+.upperPost {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.upperPost input {
+  width: 60%;
+  height: 3rem;
+  background-color: transparent;
+  border: none;
 }

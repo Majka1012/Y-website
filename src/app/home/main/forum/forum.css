@@ -1,18 +1,15 @@
 .forum {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
 }
 .input {
-  height: 20vh;
   border-radius: 1rem;
 
   background-color: antiquewhite;
 }
 .posts {
-  height: 80vh;
   border-radius: 1rem;
   background-color: rgb(204, 204, 64);
 }
