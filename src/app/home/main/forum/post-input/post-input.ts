@@ -1,7 +1,6 @@
 import { Component, ElementRef, HostListener, input, ViewChild } from '@angular/core';
 import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
-import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
   selector: 'app-post-input',
