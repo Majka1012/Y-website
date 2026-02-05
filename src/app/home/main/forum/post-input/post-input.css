@@ -58,14 +58,3 @@ a {
   resize: none;
   box-sizing: border-box;
 }
-.emojiPicker {
-  position: absolute;
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-
-.emoji-wrapper {
-  position: relative;
-  cursor: pointer;
-}

@@ -2,12 +2,7 @@
   <form action="">
     <div class="upperPost">
       <img src="userIcon.png" alt="userIcon" />
-      <textarea
-        name="inputPost"
-        id="inputPost"
-        placeholder="Write something!"
-        [(ngModel)]="text"
-      ></textarea>
+      <textarea name="inputPost" id="inputPost" placeholder="Write something!"></textarea>
     </div>
     <div class="lowerPost">
       <ul>
@@ -17,15 +12,8 @@
             <input type="file" accept="image/*" hidden />
           </label>
         </li>
-        <li class="emoji-wrapper">
-          <i class="fa-regular fa-face-laugh-beam" (click)="emojiSelector($event)"></i>
-          @if (showEmojiPicker) {
-            <div class="emojiPicker">
-              <app-emoji-picker (pickedEmoji)="onEmojiPicked($event)"></app-emoji-picker>
-            </div>
-          }
-        </li>
-        <li><i class="fa-solid fa-location-dot" (click)="onLocation()"></i></li>
+        <li><a href="">emoticons</a></li>
+        <li><a href="">location</a></li>
         <li id="postButton"><a href="">POST</a></li>
       </ul>
     </div>
