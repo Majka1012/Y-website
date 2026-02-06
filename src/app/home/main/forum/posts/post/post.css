@@ -1,0 +1,22 @@
+* {
+  color: aquamarine;
+}
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+.reaction {
+  display: flex;
+}
+.reaction ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style: none;
+}
