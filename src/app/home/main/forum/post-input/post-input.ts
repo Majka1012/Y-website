@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, input, output, ViewChild } from '@angular/core';
 import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
+import { postInterface } from '../posts/post.model';
 
 @Component({
   selector: 'app-post-input',
@@ -37,10 +38,16 @@ export class PostInput {
       alert('Geolocation is not supported by this browser.');
     }
   }
-  posting = output<string>();
+  posting = output<postInterface>();
   onPost() {
+    const post: postInterface = {
+      id: 1,
+      imgSrc: '',
+      text: this.text,
+      location: { lat: this.lat, lng: this.lng },
+    };
     if (this.text) {
-      this.posting.emit(this.text);
+      this.posting.emit(post);
       // console.log(this.text);
       this.text = '';
     } else {

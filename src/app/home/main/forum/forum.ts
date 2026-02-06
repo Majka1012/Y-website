@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Posts } from './posts/posts';
 import { PostInput } from './post-input/post-input';
+import { postInterface } from './posts/post.model';
 @Component({
   selector: 'app-forum',
   imports: [Posts, PostInput],
@@ -8,13 +9,13 @@ import { PostInput } from './post-input/post-input';
   styleUrl: './forum.css',
 })
 export class Forum {
-  posts?: string[];
-  addingPost(text: string) {
-    if (!this.posts) {
-      this.posts = [text];
+  newPosts?: postInterface[];
+  addingPost(post: postInterface) {
+    if (!this.newPosts) {
+      this.newPosts = [post];
     } else {
-      this.posts.push(text);
+      this.newPosts.push(post);
     }
-    console.log(this.posts);
+    // console.log(this.newPost);
   }
 }

@@ -1,12 +1,11 @@
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tenetur sunt error necessitatibus,
-  exercitationem vel possimus quo veniam atque perferendis magnam libero voluptate velit magni
-  placeat voluptatem ut consequuntur molestias? Lorem ipsum, dolor sit amet consectetur adipisicing
-  elit. Dolor aspernatur a, minus harum rem distinctio ullam, maiores reiciendis esse similique
-  necessitatibus dolores odio placeat explicabo cum non officiis. Magnam, distinctio. Lorem ipsum
-  dolor sit amet consectetur adipisicing elit. Animi odit vel illum, fugit tempore harum vitae?
-  Error in aspernatur similique, quasi provident saepe laboriosam fuga tempore nisi velit reiciendis
-  deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odit vero aut! Unde
-  placeat labore nisi dolores nostrum sequi, aut sit dolore perferendis quasi, laudantium eveniet
-  sunt accusantium dolor ipsum!
-</p>
+<div>
+  @if (posts()) {
+    @for (post of posts(); track post.id) {
+      <div>
+        <app-post [postConent]="post"></app-post>
+      </div>
+    }
+  } @else {
+    <h2>There are no posts to show</h2>
+  }
+</div>
