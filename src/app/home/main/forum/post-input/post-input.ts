@@ -1,7 +1,6 @@
-import { Component, ElementRef, HostListener, input, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, input, output, ViewChild } from '@angular/core';
 import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
-import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
   selector: 'app-post-input',
@@ -38,10 +37,20 @@ export class PostInput {
       alert('Geolocation is not supported by this browser.');
     }
   }
+  posting = output<string>();
+  onPost() {
+    if (this.text) {
+      this.posting.emit(this.text);
+      // console.log(this.text);
+      this.text = '';
+    } else {
+      alert('You have to write something to post it!');
+    }
+  }
 
   @ViewChild('emojiContainer') emojiContainer!: ElementRef;
 
-  emojiSelector(event: MouseEvent) {
+  emojiSelector(event: Event) {
     event.stopPropagation();
     this.showEmojiPicker = true;
   }

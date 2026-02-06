@@ -38,8 +38,8 @@ a {
   margin-left: auto;
   margin-right: 2rem;
 }
-#postButton a {
-  color: rgb(178, 225, 240);
+#postButton:hover {
+  cursor: pointer;
 }
 
 .upperPost {

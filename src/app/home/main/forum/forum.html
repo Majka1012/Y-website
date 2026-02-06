@@ -1,6 +1,6 @@
 <div class="forum">
   <div class="input">
-    <app-post-input></app-post-input>
+    <app-post-input (posting)="addingPost($event)"></app-post-input>
   </div>
   <div class="vl"></div>
   <div class="posts">
