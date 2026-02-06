@@ -4,11 +4,21 @@
 .userInfo {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1rem;
 }
 .content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: fit-content;
+  text-wrap: balance;
+}
+.content p {
+  max-width: 500px;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 .reaction {
   display: flex;
@@ -19,4 +29,8 @@
   justify-content: space-evenly;
   width: 100%;
   list-style: none;
+}
+.reaction ul li {
+  display: flex;
+  flex-direction: row;
 }

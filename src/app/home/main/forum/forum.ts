@@ -16,6 +16,6 @@ export class Forum {
     } else {
       this.newPosts.push(post);
     }
-    // console.log(this.newPost);
+    console.log(this.newPosts);
   }
 }

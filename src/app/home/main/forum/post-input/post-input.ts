@@ -41,7 +41,7 @@ export class PostInput {
   posting = output<postInterface>();
   onPost() {
     const post: postInterface = {
-      id: 1,
+      id: Math.random().toString(36),
       imgSrc: '',
       text: this.text,
       location: { lat: this.lat, lng: this.lng },

@@ -2,3 +2,14 @@ p {
   color: rgb(178, 225, 240);
   padding: 1rem;
 }
+.posts {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+.vl {
+  margin: 0px;
+  padding: 0px;
+  height: 2px;
+  background-color: #636a79;
+}

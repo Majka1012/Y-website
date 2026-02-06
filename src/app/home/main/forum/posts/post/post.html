@@ -1,16 +1,27 @@
 <div class="userInfo">
   <h3>user name</h3>
-  <p>user handle</p>
-  <p>time</p>
+  <p>@user handle</p>
+  <p>{{ date | date: 'medium' }}</p>
 </div>
 <div class="content">
   <p>{{ postConent().text }}</p>
 </div>
 <div class="reaction">
   <ul>
-    <li>heart</li>
-    <li>reply</li>
-    <li>save</li>
-    <li>share</li>
+    <li>
+      @if (!isPostLiked) {
+        <i class="fa-regular fa-heart" (click)="onLiked()"></i>
+      } @else {
+        <i class="fa-solid fa-heart" (click)="onLiked()"></i>
+      }
+      <p>{{ likes }}</p>
+    </li>
+    <li><i class="fa-solid fa-repeat"></i></li>
+    @if (!isBookmarked) {
+      <li><i class="fa-regular fa-bookmark" (click)="onBookmarked()"></i></li>
+    } @else {
+      <li><i class="fa-solid fa-bookmark" (click)="onBookmarked()"></i></li>
+    }
+    <li><i class="fa-solid fa-share"></i></li>
   </ul>
 </div>
