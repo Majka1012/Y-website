@@ -1,5 +1,9 @@
 * {
-  color: aquamarine;
+  color: rgb(209, 230, 241);
+}
+.fa-flag {
+  margin-left: auto;
+  padding-right: 1rem;
 }
 .userInfo {
   display: flex;
@@ -8,17 +12,11 @@
   gap: 1rem;
 }
 .content {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  max-width: fit-content;
-  text-wrap: balance;
+  padding: 0 2rem;
 }
 .content p {
-  max-width: 500px;
-  text-wrap: balance;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .reaction {
   display: flex;
@@ -26,7 +24,7 @@
 .reaction ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
   list-style: none;
 }
