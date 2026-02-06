@@ -1,0 +1,8 @@
+emoji-picker {
+  --background: #1e293b;
+  --border-color: transparent;
+  --button-hover-background: #334155;
+
+  width: 320px;
+  height: 350px;
+}
