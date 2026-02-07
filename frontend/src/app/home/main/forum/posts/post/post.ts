@@ -12,10 +12,7 @@ export class Post {
   likes = 0;
   isPostLiked = false;
   isBookmarked = false;
-  date: Date;
-  constructor() {
-    this.date = new Date();
-  }
+
   onLiked() {
     if (!this.isPostLiked) {
       this.likes++;

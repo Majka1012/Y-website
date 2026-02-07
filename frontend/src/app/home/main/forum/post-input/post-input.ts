@@ -1,8 +1,16 @@
-import { Component, ElementRef, HostListener, input, output, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  input,
+  OnInit,
+  output,
+  ViewChild,
+} from '@angular/core';
 import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
 import { postInterface } from '../posts/post.model';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-post-input',
   imports: [EmojiPicker, FormsModule],
@@ -12,12 +20,19 @@ import { postInterface } from '../posts/post.model';
 export class PostInput {
   text = '';
   showEmojiPicker = false;
-  onEmojiPicked(emoji: string) {
-    this.text += emoji;
-    // console.log(this.text);
-  }
+  date: Date;
+
   lat = 0;
   lng = 0;
+
+  constructor() {
+    this.date = new Date();
+  }
+
+  onEmojiPicked(emoji: string) {
+    this.text += emoji;
+  }
+
   onLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -41,9 +56,10 @@ export class PostInput {
   posting = output<postInterface>();
   onPost() {
     const post: postInterface = {
-      id: Math.random().toString(36),
+      id: crypto.randomUUID(),
       imgSrc: '',
       text: this.text,
+      time: this.date,
       location: { lat: this.lat, lng: this.lng },
     };
     if (this.text) {
