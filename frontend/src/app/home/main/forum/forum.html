@@ -1,9 +1,9 @@
 <div class="forum">
   <div class="input">
-    <app-post-input (posting)="refreshPosts()"></app-post-input>
+    <app-post-input (posting)="onPostAdded()"></app-post-input>
   </div>
   <div class="vl"></div>
   <div class="posts">
-    <app-posts #posts></app-posts>
+    <app-posts [posts]="posts"></app-posts>
   </div>
 </div>

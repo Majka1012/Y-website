@@ -9,22 +9,5 @@ import { Post } from './post/post';
   styleUrl: './posts.css',
 })
 export class Posts {
-  posts: any[] = [];
-
-  constructor(private postService: PostService) {}
-
-  ngOnInit() {
-    this.loadPosts();
-  }
-
-  loadPosts() {
-    this.postService.getPosts().subscribe({
-      next: (data) => {
-        this.posts = data;
-      },
-      error: (err) => {
-        console.log('Error loading posts:', err);
-      },
-    });
-  }
+  posts = input<any[]>([]);
 }

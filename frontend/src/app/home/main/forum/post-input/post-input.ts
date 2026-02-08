@@ -22,8 +22,8 @@ export class PostInput {
   text = '';
   showEmojiPicker = false;
 
-  lat = 0;
-  lng = 0;
+  lat?: number;
+  lng?: number;
 
   constructor(private postService: PostService) {}
 
@@ -36,10 +36,9 @@ export class PostInput {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           if (position) {
-            // console.log(position.coords);
             this.lat = position.coords.latitude;
             this.lng = position.coords.longitude;
-            // this.text += 'Latitude: ' + this.lat + 'Longitude: ' + this.lng;
+
             //AIzaSyAY2p8N665quHo0a0pwwO0_RVhXZBD943Q
           }
         },
