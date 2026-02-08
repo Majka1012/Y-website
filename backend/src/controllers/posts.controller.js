@@ -1,7 +1,30 @@
-const posts = require("../data/dummyPosts");
+const Post = require("../models/Post");
 
-function getAllPosts(req, res) {
-  res.json(posts);
+// GET all posts
+async function getAllPosts(req, res) {
+  try {
+    const posts = await Post.find().sort({ createdAt: -1 });
+    res.json(posts);
+  } catch (error) {
+    res.status(500).json({ error: "Could not fetch posts" });
+  }
 }
 
-module.exports = { getAllPosts };
+// POST create post
+async function createPost(req, res) {
+  try {
+    const newPost = new Post({
+      text: req.body.text,
+      imgSrc: req.body.imgSrc || "",
+      location: req.body.location,
+    });
+
+    const savedPost = await newPost.save();
+    res.status(201).json(savedPost);
+  } catch (error) {
+    console.log("SAVE POST ERROR:", error);
+    res.status(500).json({ error: "Post could not be saved" });
+  }
+}
+
+module.exports = { getAllPosts, createPost };

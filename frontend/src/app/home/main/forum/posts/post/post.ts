@@ -9,6 +9,7 @@ import { DatePipe } from '@angular/common';
 })
 export class Post {
   postConent = input.required<postInterface>();
+
   likes = 0;
   isPostLiked = false;
   isBookmarked = false;

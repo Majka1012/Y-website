@@ -10,7 +10,8 @@ import {
 import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
 import { postInterface } from '../posts/post.model';
-import { HttpClient } from '@angular/common/http';
+import { PostService } from '../../../../services/post.service';
+
 @Component({
   selector: 'app-post-input',
   imports: [EmojiPicker, FormsModule],
@@ -20,14 +21,11 @@ import { HttpClient } from '@angular/common/http';
 export class PostInput {
   text = '';
   showEmojiPicker = false;
-  date: Date;
 
   lat = 0;
   lng = 0;
 
-  constructor() {
-    this.date = new Date();
-  }
+  constructor(private postService: PostService) {}
 
   onEmojiPicked(emoji: string) {
     this.text += emoji;
@@ -38,10 +36,10 @@ export class PostInput {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           if (position) {
-            console.log(position.coords);
+            // console.log(position.coords);
             this.lat = position.coords.latitude;
             this.lng = position.coords.longitude;
-            this.text += 'Latitude: ' + this.lat + 'Longitude: ' + this.lng;
+            // this.text += 'Latitude: ' + this.lat + 'Longitude: ' + this.lng;
             //AIzaSyAY2p8N665quHo0a0pwwO0_RVhXZBD943Q
           }
         },
@@ -53,22 +51,29 @@ export class PostInput {
       alert('Geolocation is not supported by this browser.');
     }
   }
-  posting = output<postInterface>();
+
+  posting = output<void>();
+
   onPost() {
-    const post: postInterface = {
-      id: crypto.randomUUID(),
-      imgSrc: '',
-      text: this.text,
-      time: this.date,
-      location: { lat: this.lat, lng: this.lng },
-    };
-    if (this.text) {
-      this.posting.emit(post);
-      // console.log(this.text);
-      this.text = '';
-    } else {
-      alert('You have to write something to post it!');
+    if (!this.text.trim()) {
+      alert('Write something!');
+      return;
     }
+
+    const postData = {
+      text: this.text,
+      location: {
+        lat: this.lat,
+        lng: this.lng,
+      },
+    };
+
+    this.postService.createPost(postData).subscribe({
+      next: () => {
+        this.text = '';
+        this.posting.emit();
+      },
+    });
   }
 
   @ViewChild('emojiContainer') emojiContainer!: ElementRef;

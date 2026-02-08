@@ -1,12 +1,6 @@
-<div>
-  @if (posts()) {
-    @for (post of posts(); track post.id) {
-      <div class="posts">
-        <app-post [postConent]="post"></app-post>
-      </div>
-      <div class="vl"></div>
-    }
-  } @else {
-    <h2>There are no posts to show</h2>
+<div class="posts">
+  @for (post of posts; track post._id) {
+    <app-post class="post" [postConent]="post"></app-post>
+    <div class="vl"></div>
   }
 </div>

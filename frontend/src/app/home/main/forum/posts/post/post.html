@@ -1,9 +1,10 @@
 <div class="userInfo">
   <h3>user name</h3>
-  <p>@user handle</p>
-  <p>{{ postConent().time | date: 'dd.mm.yy hh:mm' }}</p>
-  <i class="fa-solid fa-flag"></i>
+  <p>@userhandle</p>
+
+  <p>{{ postConent().createdAt | date: 'short' }}</p>
 </div>
+
 <div class="content">
   <p>{{ postConent().text }}</p>
 </div>

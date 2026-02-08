@@ -1,7 +1,11 @@
 export interface postInterface {
-  id: string;
+  _id?: string;
   text: string;
-  imgSrc: string;
-  time: Date;
-  location: { lat: number; lng: number };
+  imgSrc?: string;
+  createdAt?: string;
+
+  location?: {
+    lat: number;
+    lng: number;
+  };
 }

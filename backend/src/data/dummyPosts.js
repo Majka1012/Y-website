@@ -1,4 +1,4 @@
-const posts = [
+let posts = [
   {
     id: "p1",
     userId: "1",
