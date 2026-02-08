@@ -1,25 +1,26 @@
 const mongoose = require("mongoose");
 
-const postSchema = new mongoose.Schema({
-  text: {
-    type: String,
-    required: true,
-  },
+const PostSchema = new mongoose.Schema(
+  {
+    text: {
+      type: String,
+      required: true,
+    },
 
-  imgSrc: {
-    type: String,
-    default: "",
-  },
+    user: {
+      username: String,
+      handle: String,
+      avatarUrl: String,
+    },
 
-  location: {
-    lat: Number,
-    lng: Number,
+    location: {
+      lat: Number,
+      lng: Number,
+      city: String,
+      country: String,
+    },
   },
+  { timestamps: true },
+);
 
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
-module.exports = mongoose.model("Post", postSchema);
+module.exports = mongoose.model("Post", PostSchema);

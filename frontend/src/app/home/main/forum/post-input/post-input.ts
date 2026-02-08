@@ -1,15 +1,7 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  input,
-  OnInit,
-  output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, HostListener, output, ViewChild } from '@angular/core';
 import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
-import { postInterface } from '../posts/post.model';
+import { postInterface } from '../../../../models/post.model';
 import { PostService } from '../../../../services/post.service';
 
 @Component({
@@ -21,9 +13,9 @@ import { PostService } from '../../../../services/post.service';
 export class PostInput {
   text = '';
   showEmojiPicker = false;
-
-  lat?: number;
-  lng?: number;
+  img = '';
+  lat = 0;
+  lng = 0;
 
   constructor(private postService: PostService) {}
 
@@ -51,6 +43,13 @@ export class PostInput {
     }
   }
 
+  currentUser = {
+    id: 'majkakakak',
+    username: 'Maja A',
+    handle: '@maja_dev',
+    avatarUrl: 'userIcon.png',
+  };
+
   posting = output<void>();
 
   onPost() {
@@ -59,12 +58,11 @@ export class PostInput {
       return;
     }
 
-    const postData = {
+    const postData: postInterface = {
       text: this.text,
-      location: {
-        lat: this.lat,
-        lng: this.lng,
-      },
+      imgSrc: this.img,
+      user: this.currentUser,
+      location: { lat: this.lat, lng: this.lng },
     };
 
     this.postService.createPost(postData).subscribe({

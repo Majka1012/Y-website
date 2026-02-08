@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { postInterface } from '../models/post.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,10 +11,11 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  createPost(postData: any): Observable<any> {
-    return this.http.post(this.apiUrl, postData);
+  createPost(post: postInterface): Observable<postInterface> {
+    return this.http.post<postInterface>(this.apiUrl, post);
   }
-  getPosts() {
-    return this.http.get<any[]>(this.apiUrl);
+
+  getPosts(): Observable<postInterface[]> {
+    return this.http.get<postInterface[]>(this.apiUrl);
   }
 }

@@ -1,6 +1,10 @@
 <div class="userInfo">
-  <h3>user name</h3>
-  <p>@userhandle</p>
+  @if (postConent().user) {
+    <img [src]="postConent().user.avatarUrl" />
+
+    <h3>{{ postConent().user.username }}</h3>
+    <p>{{ postConent().user.handle }}</p>
+  }
 
   <p>{{ postConent().createdAt | date: 'short' }}</p>
 </div>

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { postInterface } from '../post.model';
+import { postInterface } from '../../../../../models/post.model';
 import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-post',
