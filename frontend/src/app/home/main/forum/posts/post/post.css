@@ -11,6 +11,12 @@
   align-items: center;
   gap: 1rem;
 }
+.userInfo img {
+  width: 30px;
+  height: 30px;
+  background-color: antiquewhite;
+  border-radius: 2rem;
+}
 .content {
   padding: 0 2rem;
 }

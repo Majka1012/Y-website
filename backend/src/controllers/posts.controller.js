@@ -16,6 +16,11 @@ async function createPost(req, res) {
     const newPost = new Post({
       text: req.body.text,
       imgSrc: req.body.imgSrc || "",
+      user: req.body.user || {
+        avatarUrl: req.body.avatarUrl,
+        username: req.body.user.username,
+        handle: req.body.user.handle,
+      },
       location: req.body.location,
     });
 
