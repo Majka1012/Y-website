@@ -9,7 +9,6 @@ router.get("/geocode", async (req, res) => {
     return res.status(400).json({ error: "No coordinates" });
   }
 
-  // WAŻNE: Używaj backticks ` zamiast cudzysłowów " dla template strings!
   const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.GOOGLE_MAPS_KEY}`;
 
   try {
@@ -18,7 +17,7 @@ router.get("/geocode", async (req, res) => {
 
     if (data.status === "OK" && data.results.length > 0) {
       res.json({
-        address: data.results[0].formatted_address,
+        address: data.results[10].formatted_address, //result[10] is correct formating for City Country
         lat: parseFloat(lat),
         lng: parseFloat(lng),
       });
@@ -31,5 +30,4 @@ router.get("/geocode", async (req, res) => {
   }
 });
 
-// TO BRAKOWAŁO!
 module.exports = router;
