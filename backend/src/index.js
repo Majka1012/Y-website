@@ -15,6 +15,9 @@ app.use(express.json());
 app.use("/api/users", usersRoutes);
 app.use("/api/posts", postsRoutes);
 
+const geocodeRouter = require("./routes/geocode");
+app.use("/api", geocodeRouter);
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Atlas connected"))

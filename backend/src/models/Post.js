@@ -13,12 +13,7 @@ const PostSchema = new mongoose.Schema(
       avatarUrl: String,
     },
 
-    location: {
-      lat: Number,
-      lng: Number,
-      city: String,
-      country: String,
-    },
+    address: String,
   },
   { timestamps: true },
 );

@@ -3,7 +3,7 @@ import { EmojiPicker } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
 import { postInterface } from '../../../../models/post.model';
 import { PostService } from '../../../../services/post.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-post-input',
   imports: [EmojiPicker, FormsModule],
@@ -14,10 +14,13 @@ export class PostInput {
   text = '';
   showEmojiPicker = false;
   img = '';
-  lat = 0;
-  lng = 0;
+  lat: number | null = null;
+  lng: number | null = null;
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private http: HttpClient,
+  ) {}
 
   onLocation() {
     if (navigator.geolocation) {
@@ -58,13 +61,43 @@ export class PostInput {
       text: this.text,
       imgSrc: this.img,
       user: this.currentUser,
-      location: { lat: this.lat, lng: this.lng },
     };
+    if (this.lat && this.lng) {
+      this.http.get(`http://localhost:3000/api/geocode?lat=${this.lat}&lng=${this.lng}`).subscribe({
+        next: (response: any) => {
+          postData.address = response.address;
+          // console.log('ADRES ' + postData.address);
+          this.savePost(postData);
+          console.log(postData);
+        },
+        error: (error) => {
+          console.error('Błąd pobierania adresu:', error);
+          this.savePost(postData);
+        },
+      });
+    } else {
+      this.savePost(postData);
+    }
 
+    // this.postService.createPost(postData).subscribe({
+    //   next: () => {
+    //     this.text = '';
+    //     this.posting.emit();
+    //   },
+    // });
+  }
+  savePost(postData: postInterface) {
     this.postService.createPost(postData).subscribe({
       next: () => {
         this.text = '';
+        this.img = '';
+        this.lat = null;
+        this.lng = null;
         this.posting.emit();
+      },
+      error: (error) => {
+        console.error('Błąd tworzenia posta:', error);
+        alert('Nie udało się utworzyć posta');
       },
     });
   }

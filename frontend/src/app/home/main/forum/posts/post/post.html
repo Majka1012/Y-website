@@ -4,10 +4,12 @@
 
     <h3>{{ postConent().user.username }}</h3>
     <p>{{ postConent().user.handle }}</p>
+    <p>{{ postConent().address }}</p>
   }
 
   <p>{{ postConent().createdAt | date: 'short' }}</p>
 </div>
+s
 
 <div class="content">
   <p>{{ postConent().text }}</p>

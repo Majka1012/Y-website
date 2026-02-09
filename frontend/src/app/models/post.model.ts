@@ -7,10 +7,5 @@ export interface postInterface {
 
   user: userInterface;
 
-  location?: {
-    lat: number;
-    lng: number;
-    city?: string;
-    country?: string;
-  };
+  address?: {};
 }
