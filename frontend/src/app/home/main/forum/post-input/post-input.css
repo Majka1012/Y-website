@@ -51,15 +51,20 @@ a {
   justify-content: flex-start;
 }
 .upperPost textarea {
-  width: 60%;
+  width: 80%;
   min-height: 2rem;
-  max-height: 6rem;
-  height: 100%;
+  max-height: 15rem;
   background-color: transparent;
   border: none;
   color: rgb(178, 225, 240);
   resize: none;
   box-sizing: border-box;
+  overflow-y: hidden;
+  line-height: 1.5;
+  padding: 0.25rem 0;
+}
+.upperPost textarea:focus {
+  outline: none;
 }
 .emojiPicker {
   position: absolute;

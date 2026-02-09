@@ -7,6 +7,7 @@
         id="inputPost"
         placeholder="Write something!"
         [(ngModel)]="text"
+        (input)="autoResize($event)"
         tabindex="0"
       ></textarea>
     </div>

@@ -19,10 +19,6 @@ export class PostInput {
 
   constructor(private postService: PostService) {}
 
-  onEmojiPicked(emoji: string) {
-    this.text += emoji;
-  }
-
   onLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -71,6 +67,23 @@ export class PostInput {
         this.posting.emit();
       },
     });
+  }
+
+  onEmojiPicked(emoji: string) {
+    this.text += emoji;
+    setTimeout(() => {
+      const textarea = document.getElementById('inputPost') as HTMLTextAreaElement;
+      if (textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+      }
+    }, 0);
+  }
+
+  autoResize(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
   }
 
   @ViewChild('emojiContainer') emojiContainer!: ElementRef;
