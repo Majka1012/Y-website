@@ -1,18 +1,20 @@
 <div class="userInfo">
-  @if (postConent().user) {
-    <img [src]="postConent().user.avatarUrl" />
+  @if (postContent().user) {
+    <img [src]="postContent().user.avatarUrl" />
 
-    <h3>{{ postConent().user.username }}</h3>
-    <p>{{ postConent().user.handle }}</p>
-    <p>{{ postConent().address }}</p>
+    <h3>{{ postContent().user.username }}</h3>
+    <p>{{ postContent().user.handle }}</p>
   }
 
-  <p>{{ postConent().createdAt | date: 'short' }}</p>
+  <p>{{ postContent().createdAt | date: 'short' }}</p>
+  @if (postContent().address) {
+    <p><i class="fa-solid fa-location-dot"></i> {{ postContent().address }}</p>
+  }
 </div>
 s
 
 <div class="content">
-  <p>{{ postConent().text }}</p>
+  <p>{{ postContent().text }}</p>
 </div>
 <div class="reaction">
   <ul>
@@ -22,7 +24,7 @@ s
       } @else {
         <i class="fa-solid fa-heart" (click)="onLiked()"></i>
       }
-      <p>{{ likes }}</p>
+      <p>{{ postContent().likes }}</p>
     </li>
     <li><i class="fa-solid fa-repeat"></i></li>
     @if (!isBookmarked) {

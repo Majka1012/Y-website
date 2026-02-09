@@ -14,6 +14,10 @@ const PostSchema = new mongoose.Schema(
     },
 
     address: String,
+    likes: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true },
 );

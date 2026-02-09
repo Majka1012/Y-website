@@ -9,7 +9,24 @@ async function getAllPosts(req, res) {
     res.status(500).json({ error: "Could not fetch posts" });
   }
 }
+//Like or Dislike depends of boolean
+async function toggleLike(req, res) {
+  try {
+    const { id } = req.params;
+    const { liked } = req.body; // true or false
 
+    const post = await Post.findByIdAndUpdate(id, { $inc: { likes: liked ? 1 : -1 } }, { new: true });
+
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+
+    res.json(post);
+  } catch (error) {
+    console.error("Toggle like error:", error);
+    res.status(500).json({ error: "Could not update likes" });
+  }
+}
 // POST create post
 async function createPost(req, res) {
   try {
@@ -17,6 +34,7 @@ async function createPost(req, res) {
       text: req.body.text,
       imgSrc: req.body.imgSrc || "",
       address: req.body.address,
+      likes: req.body.likes,
       user: req.body.user || {
         avatarUrl: req.body.avatarUrl,
         username: req.body.user.username,
@@ -32,4 +50,4 @@ async function createPost(req, res) {
   }
 }
 
-module.exports = { getAllPosts, createPost };
+module.exports = { getAllPosts, createPost, toggleLike };

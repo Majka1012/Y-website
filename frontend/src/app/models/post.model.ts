@@ -6,6 +6,6 @@ export interface postInterface {
   createdAt?: Date;
 
   user: userInterface;
-
+  likes?: number;
   address?: {};
 }
