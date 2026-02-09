@@ -24,7 +24,7 @@ s
       } @else {
         <i class="fa-solid fa-heart" (click)="onLiked()"></i>
       }
-      <p>{{ postContent().likes }}</p>
+      <p>{{ localLikes }}</p>
     </li>
     <li><i class="fa-solid fa-repeat"></i></li>
     @if (!isBookmarked) {

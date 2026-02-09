@@ -1,4 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, computed, inject, input, output } from '@angular/core';
 import { postInterface } from '../../../../../models/post.model';
 import { DatePipe } from '@angular/common';
 import { PostService } from '../../../../../services/post.service';
@@ -14,18 +14,30 @@ export class Post {
   isPostLiked = false;
   isBookmarked = false;
   private postService = inject(PostService);
+
+  currentLikes = computed(() => this.postContent().likes || 0);
+  localLikes = 0;
+  ngOnInit() {
+    this.localLikes = this.postContent().likes || 0;
+  }
+
   onLiked() {
     const newLikedState = !this.isPostLiked;
     this.isPostLiked = newLikedState;
 
+    this.localLikes += newLikedState ? 1 : -1;
+
     this.postService.toggleLike(this.postContent()._id!, newLikedState).subscribe({
       next: (updatedPost) => {
+        this.localLikes = updatedPost.likes || 0;
         const currentPost = this.postContent();
         currentPost.likes = updatedPost.likes;
+        // console.log('local:' + this.localLikes + ' DB: ' + currentPost.likes);
       },
       error: (error) => {
         console.error('Błąd likowania:', error);
         this.isPostLiked = !newLikedState;
+        this.localLikes += newLikedState ? -1 : 1;
       },
     });
   }

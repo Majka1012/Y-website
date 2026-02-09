@@ -5,5 +5,5 @@ const router = express.Router();
 
 router.get("/", getAllPosts);
 router.post("/", createPost);
-router.patch("/", toggleLike);
+router.patch("/:id/like", toggleLike);
 module.exports = router;

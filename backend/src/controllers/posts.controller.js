@@ -14,7 +14,7 @@ async function toggleLike(req, res) {
   try {
     const { id } = req.params;
     const { liked } = req.body; // true or false
-
+    console.log("Toggle like - ID:", id, "Liked:", liked);
     const post = await Post.findByIdAndUpdate(id, { $inc: { likes: liked ? 1 : -1 } }, { new: true });
 
     if (!post) {
