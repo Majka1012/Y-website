@@ -1,14 +1,15 @@
 <div class="userInfo">
   @if (postContent().user) {
     <img [src]="postContent().user.avatarUrl" />
-
-    <h3>{{ postContent().user.username }}</h3>
-    <p>{{ postContent().user.handle }}</p>
+    <div class="userNameHandle">
+      <p class="userName">{{ postContent().user.username }}</p>
+      <p class="userHandle">{{ postContent().user.handle }}</p>
+    </div>
   }
 
-  <p>{{ postContent().createdAt | date: 'short' }}</p>
+  <p class="dateOfPost">{{ postContent().createdAt | date: 'short' }}</p>
   @if (postContent().address) {
-    <p><i class="fa-solid fa-location-dot"></i> {{ postContent().address }}</p>
+    <p class="location"><i class="fa-solid fa-location-dot"></i> {{ postContent().address }}</p>
   }
 </div>
 s

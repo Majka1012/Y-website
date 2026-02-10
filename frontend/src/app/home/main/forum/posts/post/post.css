@@ -17,6 +17,24 @@
   background-color: antiquewhite;
   border-radius: 2rem;
 }
+.userInfo .userNameHandle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3rem;
+}
+.userInfo .userName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.userInfo .userHandle {
+  color: rgb(125, 141, 150);
+}
+.userInfo .location,
+.fa-location-dot {
+  margin-left: auto;
+  color: rgb(70, 180, 238);
+}
 .content {
   padding: 0 2rem;
 }

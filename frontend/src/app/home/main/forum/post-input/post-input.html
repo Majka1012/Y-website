@@ -20,12 +20,9 @@
           </label>
         </li>
         <li class="emoji-wrapper">
-          <i
-            class="fa-regular fa-face-laugh-beam"
-            tabindex="0"
-            (click)="emojiSelector($event)"
-            (keydown.enter)="emojiSelector($event)"
-          ></i>
+          <button type="button" class="icon-btn" (click)="emojiSelector($event)">
+            <i class="fa-regular fa-face-laugh-beam"></i>
+          </button>
           @if (showEmojiPicker) {
             <div class="emojiPicker" #emojiContainer>
               <app-emoji-picker (pickedEmoji)="onEmojiPicked($event)"></app-emoji-picker>
@@ -33,14 +30,13 @@
           }
         </li>
         <li>
-          <i
-            class="fa-solid fa-location-dot"
-            tabindex="0"
-            (click)="onLocation()"
-            (keydown.enter)="onLocation()"
-          ></i>
+          <button type="button" class="icon-btn" (click)="onLocation()">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
         </li>
-        <li id="postButton" tabindex="0" (click)="onPost()" (keydown.enter)="onPost()">POST</li>
+        <li id="postButton">
+          <button type="button" class="icon-btn" (click)="onPost()">POST</button>
+        </li>
       </ul>
     </div>
   </form>
