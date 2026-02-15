@@ -19,8 +19,13 @@ export class PostService {
     return this.http.get<postInterface[]>(this.apiUrl);
   }
   toggleLike(postId: string, liked: boolean): Observable<postInterface> {
-    return this.http.patch<postInterface>(`http://localhost:3000/api/posts/${postId}/like`, {
+    return this.http.patch<postInterface>(`${this.apiUrl}/${postId}/like`, {
       liked,
+    });
+  }
+  getUserPosts(userHandle: string): Observable<postInterface[]> {
+    return this.http.get<postInterface[]>(`${this.apiUrl}/userPosts`, {
+      params: { handle: userHandle },
     });
   }
 }

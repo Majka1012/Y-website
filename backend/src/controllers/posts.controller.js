@@ -50,4 +50,16 @@ async function createPost(req, res) {
   }
 }
 
-module.exports = { getAllPosts, createPost, toggleLike };
+async function getUserPosts(req, res) {
+  try {
+    const { handle } = req.query;
+    const posts = await Post.find({ "user.handle": handle });
+    console.log(posts);
+    res.json(posts);
+  } catch (error) {
+    console.log("GET USER POSTS POST ERROR:", error);
+    res.status(500).json({ error: "Cannot get users posts" });
+  }
+}
+
+module.exports = { getAllPosts, createPost, toggleLike, getUserPosts };

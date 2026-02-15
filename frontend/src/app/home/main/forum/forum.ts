@@ -3,7 +3,7 @@ import { PostsComponent } from './posts/posts';
 import { PostInputComponent } from './post-input/post-input';
 import { PostService } from '../../../services/post.service';
 import { postInterface } from '../../../models/post.model';
-
+import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-forum',
   standalone: true,
@@ -11,7 +11,7 @@ import { postInterface } from '../../../models/post.model';
   templateUrl: './forum.html',
   styleUrl: './forum.css',
 })
-export class ForumComponent {
+export class ForumComponent implements OnInit {
   posts: postInterface[] = [];
 
   constructor(private postService: PostService) {}
