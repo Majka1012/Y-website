@@ -1,3 +1,6 @@
+* {
+  color: antiquewhite;
+}
 .split {
   display: grid;
   grid-template-columns: 5fr 2px 2fr;
@@ -43,13 +46,13 @@ hr {
   display: block;
 }
 
-.userImgBtn {
+.edit {
   display: flex;
   justify-content: flex-end;
   margin-right: 2rem;
 }
 
-.userImgBtn button {
+.edit button {
   padding: 0.3rem 1rem;
   background-color: #28455c;
   color: antiquewhite;
@@ -72,6 +75,12 @@ hr {
   height: 100%;
   border-radius: 50%;
   display: block;
+}
+
+.follow {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 1000px) {
