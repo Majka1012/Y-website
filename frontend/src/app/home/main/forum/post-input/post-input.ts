@@ -43,9 +43,8 @@ export class PostInputComponent {
   }
 
   currentUser = {
-    id: 'majkakakak',
-    username: 'Maja A',
-    handle: '@maja_dev',
+    userName: 'John Doe',
+    userHandle: 'johndoe',
     avatarUrl: 'userIcon.png',
   };
 

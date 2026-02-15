@@ -27,7 +27,7 @@ export class ProfileComponent {
         this.userHandle.set(handle);
         this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
           // this.userData = data;
-          console.log(data);
+          // console.log(data);
         });
       }
     });

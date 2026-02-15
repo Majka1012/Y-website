@@ -8,5 +8,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.css',
 })
 export class HeaderComponent {
-  currentUserHandle = '@maja_dev';
+  currentUserHandle = 'johndoe';
 }

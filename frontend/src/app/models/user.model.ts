@@ -1,6 +1,5 @@
 export interface userInterface {
-  id: string;
-  username: string;
-  handle: string;
+  userName: string;
+  userHandle: string;
   avatarUrl: string;
 }
