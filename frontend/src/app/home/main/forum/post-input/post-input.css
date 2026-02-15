@@ -1,8 +1,12 @@
-img {
+/* img {
   width: 30px;
   height: 30px;
   background-color: antiquewhite;
   border-radius: 2rem;
+  margin-right: 1rem;
+} */
+/* img moved to global styles */
+.userIcon {
   margin-right: 1rem;
 }
 .post {

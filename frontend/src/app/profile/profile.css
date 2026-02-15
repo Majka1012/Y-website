@@ -25,11 +25,53 @@ hr {
 .mini-header a {
   color: antiquewhite;
 }
+
 .user-info {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
+.background-wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .backgound-image {
   width: 100%;
+  display: block;
+}
+
+.userImgBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.userImgBtn button {
+  padding: 0.3rem 1rem;
+  background-color: #28455c;
+  color: antiquewhite;
+  border-color: #d6caca;
+  font-size: 1rem;
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+.userIconBox {
+  position: absolute;
+  bottom: -3rem;
+  left: 2rem;
+  width: 122px;
+  height: 122px;
+}
+
+.userIcon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
 }
 
 @media screen and (max-width: 1000px) {
