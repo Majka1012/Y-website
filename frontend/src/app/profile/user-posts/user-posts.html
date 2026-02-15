@@ -1,1 +1,6 @@
-<p>user-posts works!</p>
+@for (post of posts; track post._id) {
+  <div class="post">
+    <app-post [postContent]="post"></app-post>
+  </div>
+  <div class="vl"></div>
+}

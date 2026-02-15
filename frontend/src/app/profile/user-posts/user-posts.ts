@@ -1,12 +1,24 @@
-import { Component, inject } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
-
+import { postInterface } from '../../models/post.model';
+import { PostComponent } from '../../home/main/forum/posts/post/post';
 @Component({
   selector: 'app-user-posts',
-  imports: [],
+  imports: [PostComponent],
   templateUrl: './user-posts.html',
   styleUrl: './user-posts.css',
 })
-export class UserPosts {
+export class UserPosts implements OnInit {
   constructor(private postService: PostService) {}
+  posts: postInterface[] = [];
+  userHandle = input.required<string>();
+  ngOnInit() {
+    this.loadPosts();
+  }
+  loadPosts() {
+    this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
+      this.posts = data;
+      console.log(this.posts);
+    });
+  }
 }

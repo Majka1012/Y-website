@@ -17,7 +17,7 @@
       </div>
       <div>
         <h2>USERNAME</h2>
-        <p>USERHANDLE</p>
+        <p>{{ userHandle() }}</p>
         <p>BIO</p>
         <p>DATE</p>
         <div class="follow">
@@ -27,9 +27,8 @@
       </div>
     </div>
     <div class="vl"></div>
-    <div>
-      <app-user-posts></app-user-posts>
-    </div>
+
+    <app-user-posts [userHandle]="userHandle()"></app-user-posts>
   </div>
   <hr />
   <div class="news">

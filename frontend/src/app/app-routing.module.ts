@@ -7,6 +7,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: 'chat', component: ChatComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:handle', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
