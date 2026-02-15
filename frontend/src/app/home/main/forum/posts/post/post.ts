@@ -19,7 +19,9 @@ export class PostComponent {
   localLikes = 0;
   ngOnInit() {
     this.localLikes = this.postContent().likes || 0;
-    console.log(this.postContent().user.userName);
+    console.log('this.postContent()');
+
+    console.log(this.postContent().user);
   }
 
   onLiked() {

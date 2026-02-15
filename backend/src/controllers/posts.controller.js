@@ -37,8 +37,8 @@ async function createPost(req, res) {
       likes: 0,
       user: {
         avatarUrl: req.body.user.avatarUrl,
-        username: req.body.user.userName,
-        handle: req.body.user.userHandle,
+        userName: req.body.user.userName,
+        userHandle: req.body.user.userHandle,
       },
     });
 

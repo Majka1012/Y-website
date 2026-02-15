@@ -8,8 +8,8 @@ const PostSchema = new mongoose.Schema(
     },
 
     user: {
-      username: String,
-      handle: String,
+      userName: String,
+      userHandle: String,
       avatarUrl: String,
     },
 
