@@ -43,9 +43,9 @@ export class PostInputComponent {
   }
 
   currentUser = {
+    avatarUrl: 'userIcon.png',
     userName: 'John Doe',
     userHandle: 'johndoe',
-    avatarUrl: 'userIcon.png',
   };
 
   posting = output<void>();
@@ -59,7 +59,11 @@ export class PostInputComponent {
     const postData: postInterface = {
       text: this.text,
       imgSrc: this.img,
-      user: this.currentUser,
+      user: {
+        avatarUrl: this.currentUser.avatarUrl,
+        userName: this.currentUser.userName,
+        userHandle: this.currentUser.userHandle,
+      },
     };
     if (this.lat && this.lng) {
       this.http.get(`http://localhost:3000/api/geocode?lat=${this.lat}&lng=${this.lng}`).subscribe({
@@ -86,8 +90,10 @@ export class PostInputComponent {
     // });
   }
   savePost(postData: postInterface) {
+    console.log('Saving post with user:', postData.user);
     this.postService.createPost(postData).subscribe({
       next: () => {
+        console.log('Post saved successfully!');
         this.text = '';
         this.img = '';
         this.lat = null;

@@ -22,7 +22,7 @@ export class ForumComponent implements OnInit {
     this.postService.getPosts().subscribe((data) => {
       this.posts = data;
       for (const post of this.posts) {
-        console.log(post.address);
+        console.log(post);
       }
     });
   }

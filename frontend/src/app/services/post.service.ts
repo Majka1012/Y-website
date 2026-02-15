@@ -24,6 +24,8 @@ export class PostService {
     });
   }
   getUserPosts(userHandle: string): Observable<postInterface[]> {
+    console.log('GET USER POST 2');
+    console.log(userHandle);
     return this.http.get<postInterface[]>(`${this.apiUrl}/userPosts`, {
       params: { handle: userHandle },
     });

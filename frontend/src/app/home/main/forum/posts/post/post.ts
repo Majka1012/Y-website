@@ -19,6 +19,7 @@ export class PostComponent {
   localLikes = 0;
   ngOnInit() {
     this.localLikes = this.postContent().likes || 0;
+    console.log(this.postContent().user.userName);
   }
 
   onLiked() {
@@ -35,7 +36,7 @@ export class PostComponent {
         // console.log('local:' + this.localLikes + ' DB: ' + currentPost.likes);
       },
       error: (error) => {
-        console.error('Błąd likowania:', error);
+        // console.error('Błąd likowania:', error);
         this.isPostLiked = !newLikedState;
         this.localLikes += newLikedState ? -1 : 1;
       },

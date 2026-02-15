@@ -16,9 +16,11 @@ export class UserPosts implements OnInit {
     this.loadPosts();
   }
   loadPosts() {
+    // console.log('USER HANDLE' + this.userHandle());
     this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
       this.posts = data;
-      // console.log(this.posts);
+      console.log('GET USER POST 3');
+      console.log(data);
     });
   }
 }

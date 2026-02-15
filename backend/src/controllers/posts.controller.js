@@ -34,11 +34,11 @@ async function createPost(req, res) {
       text: req.body.text,
       imgSrc: req.body.imgSrc || "",
       address: req.body.address,
-      likes: req.body.likes,
-      user: req.body.user || {
-        avatarUrl: req.body.avatarUrl,
-        username: req.body.user.username,
-        handle: req.body.user.handle,
+      likes: 0,
+      user: {
+        avatarUrl: req.body.user.avatarUrl,
+        username: req.body.user.userName,
+        handle: req.body.user.userHandle,
       },
     });
 
@@ -53,8 +53,12 @@ async function createPost(req, res) {
 async function getUserPosts(req, res) {
   try {
     const { handle } = req.query;
-    const posts = await Post.find({ "user.handle": handle });
-    console.log(posts);
+    console.log("HANDLE BACKEND" + handle);
+
+    const posts = await Post.find({ "user.handle": handle }).sort({ createdAt: -1 });
+    console.log(`Searching for: ${handle}`);
+    console.log(`Found ${posts.length} posts`);
+
     res.json(posts);
   } catch (error) {
     console.log("GET USER POSTS POST ERROR:", error);
