@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewsComponent } from './news/news';
+import { NewsComponent } from '../../news/news';
 import { ForumComponent } from './forum/forum';
 @Component({
   selector: 'app-home',

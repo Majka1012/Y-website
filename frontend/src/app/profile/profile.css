@@ -1,0 +1,44 @@
+.split {
+  display: grid;
+  grid-template-columns: 5fr 2px 2fr;
+  height: 100%;
+}
+.profile {
+  grid-column: 1;
+}
+hr {
+  grid-column: 2;
+}
+.news {
+  grid-column: 3;
+}
+
+.mini-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  color: antiquewhite;
+  margin-left: 1rem;
+  max-width: 800px;
+}
+.mini-header a {
+  color: antiquewhite;
+}
+.user-info {
+  padding: 1rem;
+}
+.backgound-image {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .news,
+  .split hr {
+    display: none;
+  }
+}
