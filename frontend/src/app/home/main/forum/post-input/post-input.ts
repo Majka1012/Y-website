@@ -1,16 +1,16 @@
 import { Component, ElementRef, HostListener, output, ViewChild } from '@angular/core';
-import { EmojiPicker } from '../emoji-picker/emoji-picker';
+import { EmojiPickerComponent } from '../emoji-picker/emoji-picker';
 import { FormsModule } from '@angular/forms';
 import { postInterface } from '../../../../models/post.model';
 import { PostService } from '../../../../services/post.service';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-post-input',
-  imports: [EmojiPicker, FormsModule],
+  imports: [EmojiPickerComponent, FormsModule],
   templateUrl: './post-input.html',
   styleUrl: './post-input.css',
 })
-export class PostInput {
+export class PostInputComponent {
   text = '';
   showEmojiPicker = false;
   img = '';

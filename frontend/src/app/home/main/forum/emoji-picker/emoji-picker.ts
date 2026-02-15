@@ -7,7 +7,7 @@ import 'emoji-picker-element';
   styleUrl: './emoji-picker.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class EmojiPicker {
+export class EmojiPickerComponent {
   cancelOut = output<void>();
   pickedEmoji = output<string>();
 

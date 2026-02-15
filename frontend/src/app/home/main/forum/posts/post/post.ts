@@ -8,7 +8,7 @@ import { PostService } from '../../../../../services/post.service';
   templateUrl: './post.html',
   styleUrl: './post.css',
 })
-export class Post {
+export class PostComponent {
   postContent = input.required<postInterface>();
   likes = 0;
   isPostLiked = false;

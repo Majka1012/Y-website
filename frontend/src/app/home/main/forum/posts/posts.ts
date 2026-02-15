@@ -1,12 +1,12 @@
 import { Component, input, output } from '@angular/core';
-import { Post } from './post/post';
+import { PostComponent } from './post/post';
 
 @Component({
   selector: 'app-posts',
-  imports: [Post],
+  imports: [PostComponent],
   templateUrl: './posts.html',
   styleUrl: './posts.css',
 })
-export class Posts {
+export class PostsComponent {
   posts = input<any[]>([]);
 }

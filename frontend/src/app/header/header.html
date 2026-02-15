@@ -2,20 +2,27 @@
 <nav>
   <ul>
     <li class="logo">
-      <a href="" class="logo"><img src="Y.png" alt="Y logo" /></a>
+      <a routerLink="/home" class="logo"><img src="Y.png" alt="Y logo" /></a>
     </li>
     <li>
-      <!-- fa-regular for some reason dont work for this icon. I suspect it's fontawexome bug -->
-      <a href=""><i class="fa-solid fa-house"></i><span> Home</span></a>
+      <a routerLink="/home" routerLinkActive="active">
+        <i class="fa-solid fa-house"></i><span> Home</span>
+      </a>
     </li>
     <li>
-      <a href=""><i class="fa-regular fa-bell"></i><span>Notifications</span></a>
+      <a routerLink="/notifications" routerLinkActive="active">
+        <i class="fa-regular fa-bell"></i><span>Notifications</span>
+      </a>
     </li>
     <li>
-      <a href=""><i class="fa-regular fa-comment"></i><span>Chat</span></a>
+      <a routerLink="/chat" routerLinkActive="active">
+        <i class="fa-regular fa-comment"></i><span>Chat</span>
+      </a>
     </li>
     <li>
-      <a href=""><i class="fa-regular fa-user"></i><span>Profile</span></a>
+      <a routerLink="/profile" routerLinkActive="active">
+        <i class="fa-regular fa-user"></i><span>Profile</span>
+      </a>
     </li>
   </ul>
 </nav>
