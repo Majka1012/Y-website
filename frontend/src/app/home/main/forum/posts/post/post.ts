@@ -1,6 +1,7 @@
-import { Component, computed, inject, input, output } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { postInterface } from '../../../../../models/post.model';
 import { DatePipe } from '@angular/common';
+import { OnInit } from '@angular/core';
 import { PostService } from '../../../../../services/post.service';
 @Component({
   selector: 'app-post',
@@ -8,7 +9,7 @@ import { PostService } from '../../../../../services/post.service';
   templateUrl: './post.html',
   styleUrl: './post.css',
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   postContent = input.required<postInterface>();
   likes = 0;
   isPostLiked = false;
@@ -19,9 +20,6 @@ export class PostComponent {
   localLikes = 0;
   ngOnInit() {
     this.localLikes = this.postContent().likes || 0;
-    console.log('this.postContent()');
-
-    console.log(this.postContent().user);
   }
 
   onLiked() {

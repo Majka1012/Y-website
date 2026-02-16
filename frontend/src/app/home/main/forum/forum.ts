@@ -3,7 +3,7 @@ import { PostsComponent } from './posts/posts';
 import { PostInputComponent } from './post-input/post-input';
 import { PostService } from '../../../services/post.service';
 import { postInterface } from '../../../models/post.model';
-import { OnInit } from '@angular/core';
+import { OnInit, signal } from '@angular/core';
 @Component({
   selector: 'app-forum',
   standalone: true,
@@ -12,7 +12,7 @@ import { OnInit } from '@angular/core';
   styleUrl: './forum.css',
 })
 export class ForumComponent implements OnInit {
-  posts: postInterface[] = [];
+  posts = signal<postInterface[]>([]);
 
   constructor(private postService: PostService) {}
   ngOnInit() {
@@ -20,10 +20,7 @@ export class ForumComponent implements OnInit {
   }
   loadPosts() {
     this.postService.getPosts().subscribe((data) => {
-      this.posts = data;
-      for (const post of this.posts) {
-        console.log(post);
-      }
+      this.posts.set(data);
     });
   }
 

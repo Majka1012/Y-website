@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    private http: HttpClient,
   ) {}
 
   ngOnInit() {
@@ -27,7 +26,7 @@ export class ProfileComponent implements OnInit {
         this.userHandle.set(handle);
         this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
           this.userData = data;
-          console.log(data);
+          // console.log(data);
         });
       }
     });
