@@ -18,6 +18,9 @@ app.use("/api/posts", postsRoutes);
 const geocodeRouter = require("./routes/geocode");
 app.use("/api", geocodeRouter);
 
+const newsRouter = require("./routes/news");
+app.use("/api", newsRouter);
+
 mongoose
   .connect(process.env.Mongo_URI)
   .then(() => console.log("MongoDB Atlas connected"))

@@ -29,8 +29,6 @@ export class PostInputComponent {
           if (position) {
             this.lat = position.coords.latitude;
             this.lng = position.coords.longitude;
-
-            //AIzaSyAY2p8N665quHo0a0pwwO0_RVhXZBD943Q
           }
         },
         (error) => {

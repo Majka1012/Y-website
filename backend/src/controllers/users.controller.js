@@ -11,7 +11,7 @@ async function getUser(req, res) {
     // console.log(userHandle);
 
     const user = await users.findOne({ userHandle: userHandle });
-    console.log("USER: " + user);
+    // console.log("USER: " + user);
     // console.log("Handle: " + userHandle);
     res.json(user);
   } catch (error) {

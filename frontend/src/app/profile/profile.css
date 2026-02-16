@@ -91,12 +91,13 @@ hr {
 
 .menuProfile {
   padding: 0px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+
   width: 100%;
   margin: 0px;
   list-style: none;
   display: flex;
+  align-items: center;
+  text-align: center;
   justify-content: space-evenly;
 }
 .menuProfile a {
