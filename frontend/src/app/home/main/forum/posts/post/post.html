@@ -22,7 +22,7 @@
       @if (!isPostLiked) {
         <i class="fa-regular fa-heart" (click)="onLiked()"></i>
       } @else {
-        <i class="fa-solid fa-heart" (click)="onLiked()"></i>
+        <i class="fa-solid fa-heart" (`click)="onLiked()"></i>
       }
       <p>{{ localLikes }}</p>
     </li>

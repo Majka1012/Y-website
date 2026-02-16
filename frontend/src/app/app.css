@@ -1,6 +1,6 @@
 .page-split {
   display: grid;
-  grid-template-columns: 20% 2px 1fr;
+  grid-template-columns: 20% 1px 1fr;
   height: 100vh;
 }
 header {
@@ -17,4 +17,5 @@ main {
   grid-column: 3;
   overflow: auto;
   padding: 0px;
+  overflow-x: hidden;
 }

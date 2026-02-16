@@ -1,12 +1,14 @@
 body {
   background-color: #151f30;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  overflow-x: hidden;
+  margin-bottom: 0px;
 }
 .vl {
   margin: 0px;
   padding: 0px;
   height: 2px;
-  background-color: #746379;
+  background-color: #636a79;
 }
 .userIcon {
   width: 30px;
