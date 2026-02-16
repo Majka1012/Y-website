@@ -4,6 +4,7 @@ const Post = require("../models/Post");
 async function getAllPosts(req, res) {
   try {
     const posts = await Post.find().sort({ createdAt: -1 });
+    // console.log("POSTY POST CONTROLLER " + posts);
     res.json(posts);
   } catch (error) {
     res.status(500).json({ error: "Could not fetch posts" });
