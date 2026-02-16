@@ -1,4 +1,4 @@
-@for (post of posts; track post._id) {
+@for (post of posts(); track post._id) {
   <div class="post">
     <app-post [postContent]="post"></app-post>
   </div>

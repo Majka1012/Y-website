@@ -15,10 +15,10 @@ import { Observable } from 'rxjs';
 })
 export class ProfileComponent implements OnInit {
   userHandle = signal<string>('');
-  userData?: UserInfo;
+  userData = signal<UserInfo | null>(null);
   constructor(
     private route: ActivatedRoute,
-    private postService: UserService,
+    private userService: UserService,
   ) {}
 
   ngOnInit() {
@@ -27,13 +27,13 @@ export class ProfileComponent implements OnInit {
       const handle = params.get('handle');
       if (handle) {
         this.userHandle.set(handle);
-        this.postService.getUser(handle).subscribe((data) => {
-          this.userData = data;
+        this.userService.getUser(handle).subscribe((data) => {
+          this.userData.set(data);
           // console.log('this.userData=');
 
           // console.log(this.userData);
         });
-        // this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
+        // this.userService.getUserPosts(this.userHandle()).subscribe((data) => {
         //   this.userData = data;
         // console.log(data);
         // });

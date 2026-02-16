@@ -44,8 +44,8 @@ export class PostInputComponent {
 
   currentUser = {
     avatarUrl: 'userIcon.png',
-    userName: 'John Doe',
-    userHandle: 'johndoe',
+    userName: 'Jane Smith',
+    userHandle: 'janesmith',
   };
 
   posting = output<void>();

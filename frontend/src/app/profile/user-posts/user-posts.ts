@@ -1,4 +1,4 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, input, OnInit, signal } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { postInterface } from '../../models/post.model';
 import { PostComponent } from '../../home/main/forum/posts/post/post';
@@ -10,7 +10,7 @@ import { PostComponent } from '../../home/main/forum/posts/post/post';
 })
 export class UserPosts implements OnInit {
   constructor(private postService: PostService) {}
-  posts: postInterface[] = [];
+  posts = signal<postInterface[]>([]);
   userHandle = input.required<string>();
   ngOnInit() {
     this.loadPosts();
@@ -18,7 +18,7 @@ export class UserPosts implements OnInit {
   loadPosts() {
     // console.log('USER HANDLE' + this.userHandle());
     this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
-      this.posts = data;
+      this.posts.set(data);
       // console.log('GET USER POST 3');
       // console.log(data);
     });

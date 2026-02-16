@@ -15,15 +15,17 @@
       <div class="edit">
         <button type="button">Edit Profile</button>
       </div>
-      <div>
-        <h2>{{ userData?.userName }}</h2>
-        <p>@{{ userHandle() }}</p>
-        <p>{{ userData?.bio }}</p>
-        <div class="follow">
-          <p>FOLLOWING: {{ userData?.followingCount }}</p>
-          <p>FOLLOWERS: {{ userData?.followersCount }}</p>
+      @if (userData()) {
+        <div>
+          <h2>{{ userData()!.userName }}</h2>
+          <p>@{{ userHandle() }}</p>
+          <p>{{ userData()!.bio }}</p>
+          <div class="follow">
+            <p>FOLLOWING: {{ userData()!.followingCount }}</p>
+            <p>FOLLOWERS: {{ userData()!.followersCount }}</p>
+          </div>
         </div>
-      </div>
+      }
     </div>
     <div class="vl"></div>
 
