@@ -2,7 +2,8 @@
   <div class="profile">
     <div class="mini-header">
       <a href=""><i class="fa-solid fa-arrow-left"></i></a>
-      <p>number of posts</p>
+      <p>{{ userData()?.userName }}</p>
+      <p class="postCount">{{ postAmount() }} posts</p>
     </div>
     <div class="vl"></div>
     <div class="user-info">
@@ -39,7 +40,10 @@
 
     <div class="vl"></div>
 
-    <app-user-posts [userHandle]="userHandle()"></app-user-posts>
+    <app-user-posts
+      [userHandle]="userHandle()"
+      (postsAmount)="onPostsAmountChange($event)"
+    ></app-user-posts>
   </div>
   <hr />
   <div class="news">

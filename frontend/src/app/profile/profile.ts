@@ -2,11 +2,8 @@ import { Component, OnInit, signal } from '@angular/core';
 import { UserPosts } from './user-posts/user-posts';
 import { NewsComponent } from '../news/news';
 import { ActivatedRoute } from '@angular/router';
-
-import { postInterface } from '../models/post.model';
 import { UserService } from '../services/user.service';
 import { UserInfo } from '../models/userInfo.model';
-import { Observable } from 'rxjs';
 @Component({
   selector: 'app-profile',
   imports: [NewsComponent, UserPosts],
@@ -16,6 +13,8 @@ import { Observable } from 'rxjs';
 export class ProfileComponent implements OnInit {
   userHandle = signal<string>('');
   userData = signal<UserInfo | null>(null);
+  postAmount = signal<number>(0);
+
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
@@ -39,5 +38,11 @@ export class ProfileComponent implements OnInit {
         // });
       }
     });
+  }
+
+  onPostsAmountChange(pAmount: number) {
+    this.postAmount.set(pAmount);
+    // console.log(pAmount);
+    // console.log(this.postAmount());
   }
 }

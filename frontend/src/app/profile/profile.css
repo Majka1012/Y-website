@@ -32,7 +32,9 @@ hr {
 .mini-header a {
   color: antiquewhite;
 }
-
+.postCount {
+  color: #636a79;
+}
 .user-info {
   padding: 1rem;
   display: flex;
