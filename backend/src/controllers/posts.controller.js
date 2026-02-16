@@ -53,12 +53,12 @@ async function createPost(req, res) {
 
 async function getUserPosts(req, res) {
   try {
-    const { handle } = req.query;
-    console.log("HANDLE BACKEND" + handle);
+    const { userHandle } = req.query;
+    // console.log("HANDLE BACKEND" + handle);
 
-    const posts = await Post.find({ "user.handle": handle }).sort({ createdAt: -1 });
-    console.log(`Searching for: ${handle}`);
-    console.log(`Found ${posts.length} posts`);
+    const posts = await Post.find({ "user.userHandle": userHandle }).sort({ createdAt: -1 });
+    // console.log(`Searching for: ${userHandle}`);
+    // console.log(`Found ${posts.length} posts`);
 
     res.json(posts);
   } catch (error) {

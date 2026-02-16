@@ -6,10 +6,13 @@ async function getAllUsers(req, res) {
 }
 async function getUser(req, res) {
   try {
-    const { handle } = req.query;
-    const user = await users.find({ "user.handle": handle });
-    console.log("USERS: " + user);
-    console.log("Handle: " + handle);
+    const { userHandle } = req.query;
+    // console.log("handle");
+    // console.log(userHandle);
+
+    const user = await users.findOne({ userHandle: userHandle });
+    console.log("USER: " + user);
+    // console.log("Handle: " + userHandle);
     res.json(user);
   } catch (error) {
     console.log("GET USER ERROR:", error);

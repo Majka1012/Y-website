@@ -2,9 +2,11 @@ import { Component, OnInit, signal } from '@angular/core';
 import { UserPosts } from './user-posts/user-posts';
 import { NewsComponent } from '../news/news';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { PostService } from '../services/post.service';
+
 import { postInterface } from '../models/post.model';
+import { UserService } from '../services/user.service';
+import { UserInfo } from '../models/userInfo.model';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-profile',
   imports: [NewsComponent, UserPosts],
@@ -13,21 +15,28 @@ import { postInterface } from '../models/post.model';
 })
 export class ProfileComponent implements OnInit {
   userHandle = signal<string>('');
-  userData?: postInterface[];
+  userData?: UserInfo;
   constructor(
     private route: ActivatedRoute,
-    private postService: PostService,
+    private postService: UserService,
   ) {}
 
   ngOnInit() {
+    // Wuwaj wycigamy handle z url
     this.route.paramMap.subscribe((params) => {
       const handle = params.get('handle');
       if (handle) {
         this.userHandle.set(handle);
-        this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
+        this.postService.getUser(handle).subscribe((data) => {
           this.userData = data;
-          // console.log(data);
+          // console.log('this.userData=');
+
+          // console.log(this.userData);
         });
+        // this.postService.getUserPosts(this.userHandle()).subscribe((data) => {
+        //   this.userData = data;
+        // console.log(data);
+        // });
       }
     });
   }

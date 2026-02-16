@@ -27,7 +27,7 @@ export class PostService {
     // console.log('GET USER POST 2');
     // console.log(userHandle);
     return this.http.get<postInterface[]>(`${this.apiUrl}/userPosts`, {
-      params: { handle: userHandle },
+      params: { userHandle: userHandle },
     });
   }
 }

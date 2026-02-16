@@ -16,13 +16,12 @@
         <button type="button">Edit Profile</button>
       </div>
       <div>
-        <h2>USERNAME</h2>
-        <p>{{ userHandle() }}</p>
-        <p>BIO</p>
-        <p>DATE</p>
+        <h2>{{ userData?.userName }}</h2>
+        <p>@{{ userHandle() }}</p>
+        <p>{{ userData?.bio }}</p>
         <div class="follow">
-          <p>FOLLOWING</p>
-          <p>FOLLOWERS</p>
+          <p>FOLLOWING: {{ userData?.followingCount }}</p>
+          <p>FOLLOWERS: {{ userData?.followersCount }}</p>
         </div>
       </div>
     </div>
