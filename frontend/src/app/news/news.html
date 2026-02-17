@@ -2,12 +2,13 @@
   <h2>LATEST NEWS!</h2>
   @if (news()) {
     @for (n of news(); track $index) {
-      <div class="article">
-        <a href="" class="link">
-          <p>{{ n.title }}</p>
+      <a href="{{ n.link }}" target="_blank" class="article">
+        <p>{{ n.title }}</p>
+        @if (n.image_url) {
           <img src="{{ n.image_url }}" alt="" />
-        </a>
-      </div>
+        }
+        <p>{{ n.creator }}</p>
+      </a>
       <div class="vl"></div>
     }
   }

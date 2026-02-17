@@ -10,35 +10,35 @@
 .news h2 {
   color: antiquewhite;
 }
+
 .article {
-  margin: 1rem 2rem 1rem 2rem;
-  padding: 1rem;
-
-  background-color: #292539;
-  border: 1px solid #d3b1b1;
-
-  border-radius: 3rem;
-}
-.article .link {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
   text-decoration: none;
+  text-align: center;
 
-  width: 100%;
-  height: 100%;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  padding: 1rem;
+
+  border: 1px solid #d3b1b1;
+
+  border-radius: 3rem;
 }
-.article a img {
-  width: 50%;
-  height: 50%;
+.article img {
+  width: 60%;
+  height: 60%;
 }
-.article a p {
+.article p {
   width: 75%;
   margin: 0px;
   font-size: small;
   color: #b5adde;
+}
+.article:hover {
+  background-color: #2c3950;
 }
 .content {
   background-color: aliceblue;

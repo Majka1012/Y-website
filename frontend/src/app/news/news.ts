@@ -17,7 +17,7 @@ export class NewsComponent implements OnInit {
     this.http.get(`http://localhost:3000/api/news?country=${this.location()}`).subscribe({
       next: (response: any) => {
         this.news.set(response.data.results);
-        console.log(this.news);
+        console.log(this.news());
       },
       error: (error) => {
         console.error('Błąd pobierania adresu:', error);
