@@ -3,11 +3,11 @@
   @if (news()) {
     @for (n of news(); track $index) {
       <a href="{{ n.link }}" target="_blank" class="article">
-        <p>{{ n.title }}</p>
+        <p class="artTitle">{{ n.title }}</p>
         @if (n.image_url) {
-          <img src="{{ n.image_url }}" alt="" />
+          <!-- <img src="{{ n.image_url }}" alt="" /> -->
         }
-        <p>{{ n.creator }}</p>
+        <p class="artCreator">{{ n.creator }}</p>
       </a>
       <div class="vl"></div>
     }
