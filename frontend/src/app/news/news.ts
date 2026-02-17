@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, input, OnInit } from '@angular/core';
-
+import { Component, input, OnInit, signal } from '@angular/core';
+import { newsInterface } from '../models/news.model';
 @Component({
   selector: 'app-news',
   imports: [],
@@ -11,12 +11,12 @@ export class NewsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   location = input<string>('pl');
-  news?: JSON;
+  news = signal<newsInterface[]>([]);
 
   ngOnInit(): void {
     this.http.get(`http://localhost:3000/api/news?country=${this.location()}`).subscribe({
       next: (response: any) => {
-        this.news = response;
+        this.news.set(response.data.results);
         console.log(this.news);
       },
       error: (error) => {

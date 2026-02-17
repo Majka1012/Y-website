@@ -1,1 +1,14 @@
-<p>news works!</p>
+<div class="news">
+  <h2>LATEST NEWS!</h2>
+  @if (news()) {
+    @for (n of news(); track $index) {
+      <div class="article">
+        <a href="" class="link">
+          <p>{{ n.title }}</p>
+          <img src="{{ n.image_url }}" alt="" />
+        </a>
+      </div>
+      <div class="vl"></div>
+    }
+  }
+</div>
