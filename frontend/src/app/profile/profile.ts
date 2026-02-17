@@ -15,10 +15,13 @@ export class ProfileComponent implements OnInit {
   userData = signal<UserInfo | null>(null);
   postAmount = signal<number>(0);
 
+  userReactions: 'Posts' | 'Replies' | 'Likes' | 'Bookmarked';
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
-  ) {}
+  ) {
+    this.userReactions = 'Posts';
+  }
 
   ngOnInit() {
     // Wuwaj wycigamy handle z url
@@ -39,7 +42,10 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
-
+  changeUserReactions(typeReaction: typeof this.userReactions) {
+    console.log(typeof this.userReactions);
+    this.userReactions = typeReaction;
+  }
   onPostsAmountChange(pAmount: number) {
     this.postAmount.set(pAmount);
     // console.log(pAmount);

@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, input, OnInit, signal } from '@angular/core';
 import { newsInterface } from '../models/news.model';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-news',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './news.html',
   styleUrl: './news.css',
 })

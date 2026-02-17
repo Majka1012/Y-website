@@ -31,19 +31,26 @@
 
     <div>
       <ul class="menuProfile">
-        <a href=""> <li class="Posts">Posts</li></a>
-        <a href=""><li class="Replies">Replies</li></a>
-        <a href=""><li class="Likes">Likes</li></a>
-        <a href=""><li class="Bookmarked">Bookmarked</li></a>
+        <li (click)="changeUserReactions('Posts')">Posts</li>
+        <li (click)="changeUserReactions('Replies')">Replies</li>
+        <li (click)="changeUserReactions('Likes')">Likes</li>
+        <li (click)="changeUserReactions('Bookmarked')">Bookmarked</li>
       </ul>
     </div>
 
     <div class="vl"></div>
-
-    <app-user-posts
-      [userHandle]="userHandle()"
-      (postsAmount)="onPostsAmountChange($event)"
-    ></app-user-posts>
+    @if (userReactions === 'Posts') {
+      <app-user-posts
+        [userHandle]="userHandle()"
+        (postsAmount)="onPostsAmountChange($event)"
+      ></app-user-posts>
+    } @else if (userReactions === 'Replies') {
+      <p>REPLIES GO HERE</p>
+    } @else if (userReactions === 'Likes') {
+      <p>LIKES GO HERE</p>
+    } @else {
+      <p>Bookmarked GO HERE</p>
+    }
   </div>
   <hr />
   <div class="news">
