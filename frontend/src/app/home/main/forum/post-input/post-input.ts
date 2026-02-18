@@ -131,9 +131,7 @@ export class PostInputComponent {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     if (!this.showEmojiPicker) return;
-
     const clickedInside = this.emojiContainer?.nativeElement.contains(event.target);
-
     if (!clickedInside) {
       this.showEmojiPicker = false;
     }
