@@ -16,9 +16,7 @@
       <div class="edit">
         <button type="button" (click)="onEditProfile()">Edit Profile</button>
       </div>
-      @if (isEdited) {
-        <app-edit-profile (cancel)="closing()"></app-edit-profile>
-      }
+
       @if (userData()) {
         <div>
           <h2>{{ userData()!.userName }}</h2>
@@ -60,3 +58,6 @@
     <app-news></app-news>
   </div>
 </div>
+@if (isEdited && userData()) {
+  <app-edit-profile (cancel)="closing()"></app-edit-profile>
+}
