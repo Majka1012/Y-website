@@ -1,12 +1,15 @@
 .split {
   display: grid;
-  grid-template-columns: 5fr 2px;
+  grid-template-columns: 5fr 2px 2fr;
   height: 100%;
 }
 .form {
   grid-column: 1;
 }
-
+.news {
+  grid-column: 3;
+  border-radius: 1rem;
+}
 hr {
   grid-column: 2;
 
@@ -24,12 +27,41 @@ h1 {
   white-space: nowrap;
   border: 0;
 }
-
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.292);
+  padding-right: 2rem;
+  padding-left: 0.5rem;
+}
+a {
+  text-decoration: none;
+  color: rgb(251, 246, 239);
+  font-weight: 500;
+  margin: 0.5rem 0.5rem;
+}
+a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: #cdc6c6;
+  transform: 1px 1px 1px;
+}
 @media screen and (max-width: 1000px) {
   .split {
     grid-template-columns: 1fr;
   }
 
+  .news,
+  .skip,
   .split hr {
     display: none;
   }

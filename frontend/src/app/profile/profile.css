@@ -110,7 +110,20 @@ hr {
 .menuProfile li {
   color: #b9bac9;
 }
-
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.292);
+}
 @media screen and (max-width: 1000px) {
   .split {
     grid-template-columns: 1fr;

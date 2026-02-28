@@ -49,6 +49,20 @@ a:hover {
   box-shadow: #cdc6c6;
   transform: 1px 1px 1px;
 }
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.292);
+}
 
 @media only screen and (max-width: 1000px) {
   nav {
@@ -76,18 +90,4 @@ a:hover {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-}
-.skip {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.skip:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  background-color: rgba(255, 255, 255, 0.292);
 }

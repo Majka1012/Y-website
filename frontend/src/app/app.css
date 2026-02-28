@@ -1,8 +1,9 @@
 .page-split {
   display: grid;
-  grid-template-columns: 20% 1px 1fr 1px 1fr;
+  grid-template-columns: 20% 1px 1fr;
   height: 100vh;
 }
+
 header {
   grid-column: 1;
 }
