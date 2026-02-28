@@ -18,10 +18,15 @@
     <div class="lowerPost">
       <ul>
         <li>
-          <label class="image-upload">
+          <button
+            class="image-upload"
+            type="button"
+            (click)="fileInput.click()"
+            aria-label="upload image"
+          >
             <i class="fa-regular fa-image"></i>
-            <input type="file" tabindex="0" accept="image/*" hidden />
-          </label>
+            <input type="file" accept="image/*" hidden #fileInput enterkeyhint="send" />
+          </button>
         </li>
         <li class="emoji-wrapper">
           <button

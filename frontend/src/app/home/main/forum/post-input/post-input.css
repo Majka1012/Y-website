@@ -48,7 +48,8 @@ a {
 #postButton:hover {
   cursor: pointer;
 }
-.icon-btn {
+.icon-btn,
+.image-upload {
   background: none;
   border: none;
   padding: 0;

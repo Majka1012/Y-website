@@ -5,7 +5,10 @@
       [attr.aria-label]="postContent().user.userName + ' avatar'"
     />
     <div class="userNameHandle">
-      <p class="userName">{{ postContent().user.userName }}</p>
+      <p class="userName" tabindex="0" [aria-label]="'User name: ' + postContent().user.userName">
+        {{ postContent().user.userName }}
+        <!-- In the future, this could be a link to the user's profile -->
+      </p>
       <p class="userHandle">@{{ postContent().user.userHandle }}</p>
     </div>
   }
@@ -23,18 +26,44 @@
   <ul>
     <li>
       @if (!isPostLiked) {
-        <i class="fa-regular fa-heart" (click)="onLiked()"></i>
+        <i
+          class="fa-regular fa-heart"
+          (click)="onLiked()"
+          (keydown.enter)="onLiked()"
+          tabindex="0"
+          aria-label="Like post"
+        ></i>
       } @else {
-        <i class="fa-solid fa-heart" (`click)="onLiked()"></i>
+        <i
+          class="fa-solid fa-heart"
+          (click)="onLiked()"
+          (keydown.enter)="onLiked()"
+          tabindex="0"
+          aria-label="Unlike post"
+        ></i>
       }
       <p>{{ localLikes }}</p>
     </li>
-    <li><i class="fa-solid fa-repeat"></i></li>
+    <li><i class="fa-solid fa-repeat" tabindex="0" aria-label="Repost"></i></li>
     @if (!isBookmarked) {
-      <li><i class="fa-regular fa-bookmark" (click)="onBookmarked()"></i></li>
+      <li>
+        <i
+          class="fa-regular fa-bookmark"
+          (click)="onBookmarked()"
+          tabindex="0"
+          aria-label="Bookmark post"
+        ></i>
+      </li>
     } @else {
-      <li><i class="fa-solid fa-bookmark" (click)="onBookmarked()"></i></li>
+      <li>
+        <i
+          class="fa-solid fa-bookmark"
+          (click)="onBookmarked()"
+          tabindex="0"
+          aria-label="Unbookmark post"
+        ></i>
+      </li>
     }
-    <li><i class="fa-solid fa-share"></i></li>
+    <li><i class="fa-solid fa-share" tabindex="0" aria-label="Share post"></i></li>
   </ul>
 </div>

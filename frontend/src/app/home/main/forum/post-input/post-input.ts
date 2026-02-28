@@ -136,4 +136,6 @@ export class PostInputComponent {
       this.showEmojiPicker = false;
     }
   }
+
+  uploadFiles() {}
 }
