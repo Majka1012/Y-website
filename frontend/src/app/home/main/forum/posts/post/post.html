@@ -1,6 +1,9 @@
 <div class="userInfo">
   @if (postContent().user) {
-    <img [src]="postContent().user.avatarUrl" />
+    <img
+      [src]="postContent().user.avatarUrl"
+      [attr.aria-label]="postContent().user.userName + ' avatar'"
+    />
     <div class="userNameHandle">
       <p class="userName">{{ postContent().user.userName }}</p>
       <p class="userHandle">@{{ postContent().user.userHandle }}</p>

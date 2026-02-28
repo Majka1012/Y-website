@@ -1,7 +1,11 @@
 <div class="post">
   <form (submit)="$event.preventDefault()">
     <div class="upperPost">
-      <img src="userIcon.png" alt="userIcon" class="userIcon" />
+      <img
+        src="userIcon.png"
+        [attr.aria-label]="this.currentUser.userName + ' avatar'"
+        class="userIcon"
+      />
       <textarea
         name="inputPost"
         id="inputPost"
@@ -20,7 +24,12 @@
           </label>
         </li>
         <li class="emoji-wrapper">
-          <button type="button" class="icon-btn" (click)="emojiSelector($event)">
+          <button
+            type="button"
+            class="icon-btn"
+            (click)="emojiSelector($event)"
+            aria-label="emoji picker"
+          >
             <i class="fa-regular fa-face-laugh-beam"></i>
           </button>
           @if (showEmojiPicker) {
@@ -30,7 +39,12 @@
           }
         </li>
         <li>
-          <button type="button" class="icon-btn" (click)="onLocation()">
+          <button
+            type="button"
+            class="icon-btn"
+            (click)="onLocation()"
+            aria-label="current location"
+          >
             <i class="fa-solid fa-location-dot"></i>
           </button>
         </li>

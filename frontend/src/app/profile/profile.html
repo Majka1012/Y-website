@@ -10,7 +10,12 @@
       <div class="background-wrapper">
         <img src="backgound.png" alt="background image" class="backgound-image" />
         <div class="userIconBox">
-          <img src="userIcon.png" alt="" class="userIcon" />
+          <img
+            src="userIcon.png"
+            alt=""
+            class="userIcon"
+            [attr.aria-label]="userData()?.userName + ' avatar'"
+          />
         </div>
       </div>
       <div class="edit">

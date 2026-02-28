@@ -48,11 +48,17 @@
 .reaction ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 0px;
   width: 100%;
   list-style: none;
+  margin: 0px;
 }
 .reaction ul li {
   display: flex;
   flex-direction: row;
+}
+.reaction ul li p {
+  margin: 0px;
+  margin-left: 0.2rem;
 }

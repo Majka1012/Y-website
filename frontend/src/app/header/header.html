@@ -5,22 +5,26 @@
       <a routerLink="/home" class="logo"><img src="Y.png" alt="Y logo" /></a>
     </li>
     <li>
-      <a routerLink="/home" routerLinkActive="active">
+      <a routerLink="/home" routerLinkActive="active" aria-label="Home">
         <i class="fa-solid fa-house"></i><span> Home</span>
       </a>
     </li>
     <li>
-      <a routerLink="/notifications" routerLinkActive="active">
+      <a routerLink="/notifications" routerLinkActive="active" aria-label="Notifications">
         <i class="fa-regular fa-bell"></i><span>Notifications</span>
       </a>
     </li>
     <li>
-      <a routerLink="/chat" routerLinkActive="active">
+      <a routerLink="/chat" routerLinkActive="active" aria-label="Chat">
         <i class="fa-regular fa-comment"></i><span>Chat</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="['/profile', currentUserHandle]" routerLinkActive="active">
+      <a
+        [routerLink]="['/profile', currentUserHandle]"
+        routerLinkActive="active"
+        aria-label="Profile"
+      >
         <i class="fa-regular fa-user"></i><span>Profile</span>
       </a>
     </li>
