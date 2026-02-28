@@ -1,15 +1,12 @@
 .split {
   display: grid;
-  grid-template-columns: 5fr 2px 2fr;
+  grid-template-columns: 5fr 2px;
   height: 100%;
 }
 .form {
   grid-column: 1;
 }
-.news {
-  grid-column: 3;
-  border-radius: 1rem;
-}
+
 hr {
   grid-column: 2;
 
@@ -33,7 +30,6 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .news,
   .split hr {
     display: none;
   }
