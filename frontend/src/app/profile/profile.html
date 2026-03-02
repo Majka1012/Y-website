@@ -11,8 +11,7 @@
         <img src="backgound.png" alt="background image" class="backgound-image" />
         <div class="userIconBox">
           <img
-            src="userIcon.png"
-            alt=""
+            src="{{ userData()?.avatarUrl }}"
             class="userIcon"
             [attr.aria-label]="userData()?.userName + ' avatar'"
           />

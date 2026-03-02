@@ -16,6 +16,7 @@ export class PostInputComponent {
   img = '';
   lat: number | null = null;
   lng: number | null = null;
+  file?: File | null = null;
 
   constructor(
     private postService: PostService,
@@ -88,7 +89,7 @@ export class PostInputComponent {
     // });
   }
   savePost(postData: postInterface) {
-    console.log('Saving post with user:', postData.user);
+    // console.log('Saving post with user:', postData.user);
     this.postService.createPost(postData).subscribe({
       next: () => {
         console.log('Post saved successfully!');
@@ -137,5 +138,8 @@ export class PostInputComponent {
     }
   }
 
-  uploadFiles() {}
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    // console.log('Selected file:', file);
+  }
 }
