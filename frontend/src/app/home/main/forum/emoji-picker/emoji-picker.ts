@@ -9,6 +9,9 @@ import 'emoji-picker-element';
 })
 export class EmojiPickerComponent {
   pickedEmoji = output<string>();
+
+  // There could be added stop progagation method to prevent closing the emoji picker when clicking on it. Bot for reference I leave it like that.
+
   onPickedEmoji(event: any) {
     this.pickedEmoji.emit(event.detail.unicode);
   }

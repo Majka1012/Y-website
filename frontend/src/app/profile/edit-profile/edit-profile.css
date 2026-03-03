@@ -41,6 +41,7 @@
   border-radius: 0.5rem;
   padding: 0.5rem;
   align-items: start;
+  gap: 0.5rem;
 }
 
 .form-container label {

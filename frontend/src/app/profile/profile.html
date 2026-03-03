@@ -63,5 +63,9 @@
   </div>
 </div>
 @if (isEdited && userData()) {
-  <app-edit-profile (cancel)="closing()"></app-edit-profile>
+  <app-edit-profile
+    (cancel)="closing()"
+    (updatedUser)="onUpdatedUser($event)"
+    [userData]="userData()!"
+  ></app-edit-profile>
 }

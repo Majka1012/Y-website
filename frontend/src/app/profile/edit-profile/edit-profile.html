@@ -1,10 +1,10 @@
 <div class="modal" (click)="onCancel()">
   <div class="form-popup" (click)="noCancel($event)">
     <h2>Edit Profile</h2>
-    <form action="" class="form-container">
+    <form (submit)="onSubmit($event)" class="form-container">
       <div class="input-profile">
-        <label for="name">Name</label>
-        <input type="text" id="name" value="nameadad" />
+        <label for="name">User Name</label>
+        <input type="text" id="name" [formField]="editForm.userName" />
       </div>
       <div class="input-profile">
         <label for="avatar">Avatar</label>
@@ -12,11 +12,7 @@
       </div>
       <div class="input-profile">
         <label for="bio">Bio</label>
-        <input type="text" id="bio" value="bio adad" />
-      </div>
-      <div class="input-profile">
-        <label for="location">Location</label>
-        <input type="text" id="location" value="Kraków" />
+        <input type="text" id="bio" [formField]="editForm.bio" />
       </div>
 
       <div class="buttons">

@@ -19,5 +19,19 @@ async function getUser(req, res) {
     res.status(500).json({ error: "Cannot get user" });
   }
 }
-
-module.exports = { getAllUsers, getUser };
+async function updateUser(req, res) {
+  try {
+    const { userHandle } = req.query;
+    const { userName, bio } = req.body;
+    const updatedUser = await users.findOneAndUpdate(
+      { userHandle: userHandle },
+      { userName: userName, bio: bio },
+      { new: true },
+    );
+    res.json(updatedUser);
+  } catch (error) {
+    console.log("UPDATE USER ERROR:", error);
+    res.status(500).json({ error: "Cannot update user" });
+  }
+}
+module.exports = { getAllUsers, getUser, updateUser };

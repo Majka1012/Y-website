@@ -20,4 +20,9 @@ export class UserService {
       params: { userHandle: userHandle },
     });
   }
+  updateUser(userHandle: string, userData: Partial<UserInfo>): Observable<UserInfo> {
+    return this.http.put<UserInfo>(`${this.apiUrl}/user`, userData, {
+      params: { userHandle: userHandle },
+    });
+  }
 }

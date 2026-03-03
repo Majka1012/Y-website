@@ -40,6 +40,11 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
+  onUpdatedUser(updatedUser: UserInfo) {
+    this.userData.set(updatedUser);
+  }
+
   changeUserReactions(typeReaction: typeof this.userReactions) {
     console.log(typeof this.userReactions);
     this.userReactions = typeReaction;

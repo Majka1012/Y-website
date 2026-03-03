@@ -78,6 +78,7 @@ export class PostInputComponent {
         },
       });
     } else {
+      ``;
       this.savePost(postData);
     }
 
